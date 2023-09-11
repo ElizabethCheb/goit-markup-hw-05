@@ -247,7 +247,7 @@ button {
   margin: 0 auto;
 }
 .review_form_field_wrapper {
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
 }
 .review_form_field_label {
   color: var(--LIGHT-SLATE, #8e8f99);
@@ -322,7 +322,6 @@ button {
   position: relative;
 }
 .review_form_own_checkbox {
-  display: inline-flex;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -340,14 +339,10 @@ button {
   fill: transparent;
   display: inline-flex;
 }
-input[type="checkbox"]:checked + .review_form_own_checkbox {
+input:checked + label > span {
   background-color: #404bbf;
-}
-input[type="checkbox"]:checked + .review_form_own_checkbox {
-  fill: #f4f4fd;
-}
-input[type="checkbox"]:checked + .review_form_own_checkbox {
   border: none;
+  fill: #f4f4fd;
 }
 .review_form_own_checkbox_icon {
   margin: 0;
