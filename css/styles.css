@@ -248,7 +248,7 @@ button {
   margin: 0 auto;
 }
 .review_form_field_wrapper {
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
 }
 .review_form_field_label {
   color: var(--LIGHT-SLATE, #8e8f99);
@@ -259,7 +259,7 @@ button {
   display: block;
 }
 ._byy {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 .review_form_input {
   width: 100%;
@@ -321,6 +321,7 @@ button {
 }
 .review_form_input_wrapper {
   position: relative;
+  margin-bottom: 16px;
 }
 .review_form_own_checkbox {
   justify-content: center;
