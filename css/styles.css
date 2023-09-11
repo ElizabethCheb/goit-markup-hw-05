@@ -164,13 +164,14 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(46, 47, 66, 0.7);
+  background-color: rgba(46, 47, 66, 0.4);
   z-index: 999999;
   position: fixed;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 500ms linear, visibility 500ms linear;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form.is-open {
   opacity: 1;
@@ -181,15 +182,19 @@ button {
   width: 408px;
   min-height: 584px;
   position: absolute;
-  padding: 24px;
+  padding: 72px 24px 24px 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 4px;
+  transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: зі значенням 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   background: var(--DAIRY, #fcfcfc);
 }
+.modal:focus, .modal:hover {fill: #ffffff}
 .review_form_description {
-  margin: 48px 0 16px 0;
+  margin: 0 0 16px 0;
   color: var(--NAVY-BLUE, #2e2f42);
   text-align: center;
 
@@ -210,16 +215,23 @@ button {
   stroke: #2e2f42;
   width: 24px;
   height: 24px;
-  border-radius: 24px;
-  border-color: #0000001a;
-  color: #2e2f42;
+  border-radius: 50%;
+  align-items: center;
+   justify-content: center;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #25274a;
   stroke-width: 1px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
   stroke: rgba(0, 0, 0, 0.1);
 }
 .close_btn:hover,
 .close_btn:focus {
   stroke: #4d5ae5;
   cursor: pointer;
+  background-color: #404bbf;
+  border: none;
 }
 .close_btn_svg {
   transition: stroke 250ms ease-out;
@@ -234,12 +246,12 @@ button {
   color: var(--LIGHT-SLATE, #8e8f99);
   font-size: 12px;
   font-weight: 400;
-  line-height: 1.16; /* 116.667% */
+  line-height: 1.17; /* 116.667% */
   letter-spacing: 0.04em;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
-.by {
+._by {
   margin-bottom: 8px;
 }
 .review_form_input {
@@ -247,8 +259,10 @@ button {
   height: 40px;
   border-radius: 4px;
   border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
-  transition: border-color 250ms ease-out;
+  transition: border-color 250ms ease-out;transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding-left: 38px;
+  background-color: transparent;
+  outline: transparent;
 }
 .review_form_input:focus {
   border-color: #4d5ae5;
@@ -285,6 +299,7 @@ button {
   left: 16px;
   transform: translateY(-50%);
   fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .review_form_input:focus + .review_form_filed_icon {
   fill: #4d5ae5;
@@ -915,13 +930,11 @@ button {
   width: 264px;
   height: 40px;
 
-  background-color: transparent;
   display: flex;
 
   border: 0;
-  background: var(--NAVY-BLUE, #2e2f42);
   color: var(--WHITE, #fff);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   border: 1px solid var(--WHITE, #fff);
   font-family: Roboto;
@@ -931,9 +944,11 @@ button {
   line-height: 1.5; /* 200% */
   letter-spacing: 0.04em;
   padding: 8px 0 8px 16px;
+  background-color: transparent;
 }
 .ft_button {
   width: 117px;
+  height: 40px;
   display: flex;
   display: inline-flex;
   padding: 8px 24px;
@@ -946,12 +961,15 @@ button {
   text-align: center;
   min-width: 165px;
   /* Button Text */
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1, 5; /* 150% */
+  line-height: 1.5; /* 150% */
   letter-spacing: 0.04em;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
 }
 .ul_ft_subscribe {
   display: flex;
